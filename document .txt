@@ -153,6 +153,8 @@ $ Working with Remotes:
  				      at the same time and they push upstream and then you push upstream, your push 
 				      will rightly be rejected. You’ll have to fetch their work first and incorporate 
 				      it into yours before you’ll be allowed to push.
+   * Add new remote: 
+      * git remote add <shortname> <url>
 
    * Inspecting a Remote:
       * git remote show origin
