@@ -41,7 +41,7 @@ Four important entries:
 
 2. Head: The HEAD file points to the branch you currently have checked out.
 3. The index file is where Git stores your staging area information.
-4 The refs directory stores pointers into commit objects in that data (branches, tags, remotes and more).
+4. The refs directory stores pointers into commit objects in that data (branches, tags, remotes and more).
 
 
 Cloning an Existing Repository:
@@ -67,9 +67,18 @@ $ git add .:
    It takes to file into a staged area and prepare them for commit.
    And all the stages file stored in index file in .git ignore directory.
 
-   we can remove any file from stagin are by -> git rm --cached [file name]/ git rm -r --cached [directory]
+   ** we can remove any file from stagin are by -> git rm --cached [file name]/ git rm -r --cached [directory]
 
 $ .gitignore: 
    you’ll have a class of files that you don’t want Git to automatically add or even show you as being untracked.
 
    Force any file to add stage area you need to run -> git add -f "filename"
+
+To see the current status of my project:
+   -> git status  # tell us about Changes to be committed, Changes not staged for commit
+   -> git diff    # show us the exect changes in folder if it is in unstaged area.
+
+$ git commit:
+   If you commit at this point, the version of the file at the time you ran git add is what will be 
+   in the subsequent historical snapshot
+   Remember that the commit records the snapshot you set up in your staging area.
