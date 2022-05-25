@@ -113,7 +113,7 @@ $ Viewing the Commit History:
    		    --before="2008-11-01" --no-merges -- t/
 
 $ Git Basics - Undoing Things:
-	* git commit --amend -> when you commit too early and possibly forget to add some files, 
+   * git commit --amend -> when you commit too early and possibly forget to add some files, 
 				or you mess up your commit message. If you want to redo that commit, 
 				make the additional changes you forgot, stage them, and commit again 
 				using the --amend option.
@@ -126,6 +126,38 @@ $ Git Basics - Undoing Things:
 						   from staged area. 
 
    * Unmodifying a Modified File:
-	* git checkout -- CONTRIBUTING.md
+	* git checkout -- CONTRIBUTING.md --> To remove the change from you local file and that is not staged yeat.
 
+$ Working with Remotes:
+   * Showing Your Remotes:
+      * git remote -v 
+   
+   * Adding Remote Repositories:
+      * git remote add <shortname> <url>
+
+   * fatch all the data from remote repo
+      * git fetch remote_repo_sort_name
+
+   * Fetching and Pulling from Your Remotes:
+      * git fetch <remote> --> It’s important to note that the git fetch command only downloads the data to your 
+                 	        local repository — it doesn’t automatically merge it with any of your work or modify what 
+			        you’re currently working on. You have to merge it manually into your work when you’re ready.
+
+      * git pull --> If your current branch is set up to track a remote branch.
+		  you can use the git pull command to automatically fetch and 
+      		  then merge that remote branch into your current branch.
+   * Pushing to Your Remotes:
+      * git push <remote> <branch> -> This command works only if you cloned from a server to which you have write access 
+				      and if nobody has pushed in the meantime. If you and someone else clone 
+ 				      at the same time and they push upstream and then you push upstream, your push 
+				      will rightly be rejected. You’ll have to fetch their work first and incorporate 
+				      it into yours before you’ll be allowed to push.
+   * Inspecting a Remote:
+      * git remote show origin
+
+   * Renaming and Removing Remotes:
+      * git remote rename oldname newname  -> rename a remote repo
+      * git remote remove remote_name -> remove remote 
+
+      
 	
