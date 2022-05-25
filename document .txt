@@ -172,4 +172,21 @@ $ Creating Tags:
       * git push origin v1.5
       * git push origin --tags  -> This will transfer all of your tags to the remote server that are not already there
       
-	
+   * Deleting Tags:
+      * git tag -d v1.4-lw  -> delete tags from local git directory.
+      * git push origin --delete <tagname>  -> delte tags form remote server.
+
+$ Checking out Tags:
+   * git checkout v2.0.0  -> checkout a spacific verions of tag.
+   * git checkout -b version2 v2.0.0  --> create a brach with spacific version of tag
+
+$ Git Aliases:
+   * Git doesn’t automatically infer your command if you type it in partially. 
+     If you don’t want to type the entire text of each of the Git commands, 
+     you can easily set up an alias for each command using git config. Here are a couple of examples 
+     you may want to set up. 
+     --> $ git config --global alias.co checkout
+	 $ git config --global alias.br branch
+	 $ git config --global alias.ci commit
+	 $ git config --global alias.st status
+    --> This means that, for example, instead of typing git commit, you just need to type git ci
