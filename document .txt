@@ -42,3 +42,34 @@ Four important entries:
 2. Head: The HEAD file points to the branch you currently have checked out.
 3. The index file is where Git stores your staging area information.
 4 The refs directory stores pointers into commit objects in that data (branches, tags, remotes and more).
+
+
+Cloning an Existing Repository:
+    git clone https://github.com/libgit2/libgit2
+    Git receives a full copy of nearly all data that the server has.
+    Every version of every file for the history of the project is pulled down by default when you run git clone.
+
+Tracked or Untracked:
+   * Tracked files are files that were in the last snapshot, as well as any newly staged files.
+   * Untracked files are any files in your working directory that were not in your last snapshot and are not in your staging area
+
+How does git know when there is change in the local repo?
+   So if you have a committed version of a file, and a working-copy version, all Git has to do is 
+   calculate a hash value for the working file and compare it to the already-calculated hash from the committed snapshot.
+   If the hashes aren't the same, then it knows something has changed.
+
+   calculation only happens when you ask (e.g. git status or git diff). It is not constantly checking on its own.
+
+$ git add .:
+   The "git add" command takes a path name for either a file or a directory; if it’s a directory,
+   the command adds all the files in that directory recursively
+   
+   It takes to file into a staged area and prepare them for commit.
+   And all the stages file stored in index file in .git ignore directory.
+
+   we can remove any file from stagin are by -> git rm --cached [file name]/ git rm -r --cached [directory]
+
+$ .gitignore: 
+   you’ll have a class of files that you don’t want Git to automatically add or even show you as being untracked.
+
+   Force any file to add stage area you need to run -> git add -f "filename"
