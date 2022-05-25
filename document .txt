@@ -133,7 +133,7 @@ $ Working with Remotes:
       * git remote -v 
    
    * Adding Remote Repositories:
-      * git remote add <shortname> <url>
+      * git remote add <shortname> <url> 
 
    * fatch all the data from remote repo
       * git fetch remote_repo_sort_name
