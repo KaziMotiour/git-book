@@ -82,3 +82,38 @@ $ git commit:
    If you commit at this point, the version of the file at the time you ran git add is what will be 
    in the subsequent historical snapshot
    Remember that the commit records the snapshot you set up in your staging area.
+
+$ Skipping the Staging Area:
+   ** git commit -a -m 'Add new benchmarks' # we can skip the staging area and commit with 
+   automatically stage every file that is already tracked before doing the commit.
+
+$ Removing Files:
+   -> git rm --cached README
+
+$ Moving Files:
+   git mv file_from file_to
+
+$ Viewing the Commit History:
+   * git log  -> It shows lists the commits made in that repository in reverse chronological order
+   * git log -p -2  -> which shows the difference (the patch output) introduced in each commit. 
+     You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
+
+   * git log --pretty=oneline  -> The oneline value for this option prints each commit on a single line, 
+     which is useful if you’re looking at a lot of commits.
+
+   * git log --pretty=format:"%h - %an, %ar : %s"  ->This is especially useful when you’re generating output for 
+     machine parsing — because you specify the format explicitly, you know it won’t change with updates to Git
+   
+   * git log --pretty=format:"%h %s" --graph  -> This option adds a nice little ASCII graph showing your branch and merge history
+   * git log --since=2.weeks  -> This command gets the list of commits made in the last two weeks
+
+   **  if you want to see which commits modifying test files in the Git source code history were committed 
+       by Junio Hamano in the month of October 2008 and are not merge commits, you can run something like this:
+		->  git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+   		    --before="2008-11-01" --no-merges -- t/
+
+$ Git Basics - Undoing Things:
+	* git commit --amend -> when you commit too early and possibly forget to add some files, 
+				or you mess up your commit message. If you want to redo that commit, 
+				make the additional changes you forgot, stage them, and commit again 
+				using the --amend option
