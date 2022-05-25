@@ -158,8 +158,8 @@ $ Working with Remotes:
       * git remote show origin
 
    * Renaming and Removing Remotes:
-      * git remote rename oldname newname  -> rename a remote repo
-      * git remote remove remote_name -> remove remotes 
+      * git remote rename oldname newname  -> rename a remote repos
+      * git remote remove remote_name -> remove remote 
 
       
 	
