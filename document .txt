@@ -143,7 +143,7 @@ $ Working with Remotes:
                  	        local repository — it doesn’t automatically merge it with any of your work or modify what 
 			        you’re currently working on. You have to merge it manually into your work when you’re ready.
 
-      * git pull <remote> --> If your current branch is set up to track a remote branch.
+      * git pull --> If your current branch is set up to track a remote branch.
 		  you can use the git pull command to automatically fetch and 
       		  then merge that remote branch into your current branch.
 
@@ -153,8 +153,6 @@ $ Working with Remotes:
  				      at the same time and they push upstream and then you push upstream, your push 
 				      will rightly be rejected. You’ll have to fetch their work first and incorporate 
 				      it into yours before you’ll be allowed to push.
-   * Add new remote: 
-      * git remote add <shortname> <url>
 
    * Inspecting a Remote:
       * git remote show origin
@@ -163,5 +161,15 @@ $ Working with Remotes:
       * git remote rename oldname newname  -> rename a remote repos
       * git remote remove remote_name -> remove remote 
 
+$ Creating Tags:
+   * Annotated Tags:
+      * git tag -a v1.4 -m "my version 1.4" -> That shows the tagger information, the date the commit was tagged, 
+					       and the annotation message before showing the commit information.
+   * Lightweight Tags:
+      *  git tag v1.4-lw.
+
+   * Sharing Tags to remote. 
+      * git push origin v1.5
+      * git push origin --tags  -> This will transfer all of your tags to the remote server that are not already there
       
 	
