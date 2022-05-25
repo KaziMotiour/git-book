@@ -116,4 +116,16 @@ $ Git Basics - Undoing Things:
 	* git commit --amend -> when you commit too early and possibly forget to add some files, 
 				or you mess up your commit message. If you want to redo that commit, 
 				make the additional changes you forgot, stage them, and commit again 
-				using the --amend option
+				using the --amend option.
+				
+				But it will not work when commit has poshed already. To make it happend you to
+				git pull frist then push the new commit with --amend
+   * Unstaging a Staged File:
+	* git reset HEAD "file name" -> It will unstaged any file form staged area. 
+	* git restore --staged CONTRIBUTING.md  -> instad of git reset with can user git restore to remove a file 
+						   from staged area. 
+
+   * Unmodifying a Modified File:
+	* git checkout -- CONTRIBUTING.md
+
+	
