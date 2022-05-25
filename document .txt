@@ -159,7 +159,7 @@ $ Working with Remotes:
 
    * Renaming and Removing Remotes:
       * git remote rename oldname newname  -> rename a remote repo
-      * git remote remove remote_name -> remove remote 
+      * git remote remove remote_name -> remove remotes 
 
       
 	
