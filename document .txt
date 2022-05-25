@@ -146,12 +146,14 @@ $ Working with Remotes:
       * git pull <remote> --> If your current branch is set up to track a remote branch.
 		  you can use the git pull command to automatically fetch and 
       		  then merge that remote branch into your current branch.
+
    * Pushing to Your Remotes:
       * git push <remote> <branch> -> This command works only if you cloned from a server to which you have write access 
 				      and if nobody has pushed in the meantime. If you and someone else clone 
  				      at the same time and they push upstream and then you push upstream, your push 
 				      will rightly be rejected. You’ll have to fetch their work first and incorporate 
 				      it into yours before you’ll be allowed to push.
+
    * Inspecting a Remote:
       * git remote show origin
 
