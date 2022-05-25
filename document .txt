@@ -1,0 +1,44 @@
+Snapshots, Not Differences:
+Git thinks of its data more like a series of snapshots of a miniature filesystem. 
+Every time you commit, or save the state of your project, Git basically takes a picture of what all your files look
+like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, 
+Git doesn’t store the file again, just a link to the previous identical file it has already stored.
+
+
+$ git init
+that contains all of your necessary repository files.which is where almost everything that Git stores
+ and manipulates is located
+
+config
+description
+HEAD
+hooks/
+info/
+objects/
+refs/
+
+1. The description file is used only by the GitWeb program, so don’t worry about it.
+2. The config file contains your project-specific configuration options.
+3. and the info directory keeps a global exclude file for ignored patterns that you don’t want to track in a .gitignore file.
+4. The hooks directory contains your client- or server-side hook scripts.
+
+Four important entries:
+1. Objects: The objects directory stores all the content for your database.
+   It contains our original data files and all the log messages, author information, 
+   dates, and other information required to rebuild any revision or branch of the project
+   
+   Every object consists of three things- a type, a size, and content
+   The size is simply the size of the contents, the content depends on what type of object is
+   
+   there are four different types of objects: “blob”, “tree”, “commit”, and “tag”.
+   Git stores these different types of objects in.
+   * A “blob” is used to store file data- it is generally a file.
+   * A “tree” is basically like a directory- it references a bunch of other trees and blobs 
+     (i.e. files and sub-directories)
+   * A “commit” object holds metadata for each change introduced in the repository, 
+     including the author, committer, commit-data, and log- messages.
+   * A “tag” object assigns an arbitrary human-readable name to a specific object usually a commit	
+
+2. Head: The HEAD file points to the branch you currently have checked out.
+3. The index file is where Git stores your staging area information.
+4 The refs directory stores pointers into commit objects in that data (branches, tags, remotes and more).
