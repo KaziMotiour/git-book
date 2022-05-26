@@ -106,13 +106,14 @@ $ Viewing the Commit History:
    * git log  -> It shows lists the commits made in that repository in reverse chronological order
    * git log -p -2  -> which shows the difference (the patch output) introduced in each commit. 
      You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
-
+	
    * git log --pretty=oneline  -> The oneline value for this option prints each commit on a single line, 
      which is useful if you’re looking at a lot of commits.
 
    * git log --pretty=format:"%h - %an, %ar : %s"  ->This is especially useful when you’re generating output for 
      machine parsing — because you specify the format explicitly, you know it won’t change with updates to Git
    
+   * git log --oneline --decorate --graph --all -> show commit with graphical representation.
    * git log --pretty=format:"%h %s" --graph  -> This option adds a nice little ASCII graph showing your branch and merge history
    * git log --since=2.weeks  -> This command gets the list of commits made in the last two weeks
 
@@ -139,7 +140,8 @@ $ Git Basics - Undoing Things:
 
 $ Working with Remotes:
    * Showing Your Remotes:
-      * git remote -v 
+      * git remote -v
+      
    
    * Adding Remote Repositories:
       * git remote add <shortname> <url> 
@@ -205,5 +207,35 @@ $ Branches in a Nutshell:
    * Creating a New Branch:
 	What happens when you create a new branch? Well, doing so creates a new pointer for you to move around.
 	-> git branch testing
-	This creates a new pointer to the same commit you’re currently on
+	This creates a new pointer to the same commit you’re currently on.
+	
+	-> git checkout -b hotfix -> create and checkout branch
+   * Remove Branch:
+      * git branch -d hotfix  -> delete banch form local
+      * git branch -D hotfix  -> force to delete banch form local
+      * git push origin --delete hotfix  -> delete branch form remote
+   
+   * Checkout Branch:
+      * git checkout master
+
+   * Merge Branch:
+      * fast forword merge:
+          -> When you try to merge one commit with a commit that can be reached by following the first commit’s history, 
+  	     Git simplifies things by moving the pointer forward because there is no divergent work to merge together — 
+    	     this is called a “fast-forward
+      	
+	     * git merge hotfix
+
+   * Three way merge:
+      * When  your development history has diverged from some older point. Because the commit on 
+        the branch you’re on isn’t a direct ancestor of the branch you’re merging in, Git has to do some work. 
+        In this case, Git does a simple three-way merge, using the two snapshots pointed to by the branch tips and 
+        the common ancestor of the two.
+
+        Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this 
+	three-way merge and automatically creates a new commit that points to it. This is referred to as a merge commit, 
+	and is special in that it has more than one parent.
+
+
+
 	
