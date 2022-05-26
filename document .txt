@@ -204,6 +204,9 @@ $ Git Aliases:
 
 
 $ Branches in a Nutshell:
+
+   * git branch -v  -> To see last commit of each branch
+
    * Creating a New Branch:
 	What happens when you create a new branch? Well, doing so creates a new pointer for you to move around.
 	-> git branch testing
