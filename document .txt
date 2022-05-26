@@ -83,6 +83,15 @@ $ git commit:
    in the subsequent historical snapshot
    Remember that the commit records the snapshot you set up in your staging area.
 
+   When you create the commit by running git commit, Git checksums each subdirectory 
+   (in this case, just the root project directory) and stores them as a tree object in the Git repository. 
+   Git then creates a commit object that has the metadata and a pointer to the root project tree so 
+   it can re-create that snapshot when needed.
+
+   Your Git repository now contains five objects: three blobs (each representing the contents of one of the three files), 
+   one tree that lists the contents of the directory and specifies which file names are stored as which blobs, 
+   and one commit with the pointer to that root tree and all the commit metadata
+
 $ Skipping the Staging Area:
    ** git commit -a -m 'Add new benchmarks' # we can skip the staging area and commit with 
    automatically stage every file that is already tracked before doing the commit.
@@ -190,3 +199,11 @@ $ Git Aliases:
 	 $ git config --global alias.ci commit
 	 $ git config --global alias.st status
     --> This means that, for example, instead of typing git commit, you just need to type git ci
+
+
+$ Branches in a Nutshell:
+   * Creating a New Branch:
+	What happens when you create a new branch? Well, doing so creates a new pointer for you to move around.
+	-> git branch testing
+	This creates a new pointer to the same commit you’re currently on
+	
