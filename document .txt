@@ -239,6 +239,24 @@ $ Branches in a Nutshell:
 	three-way merge and automatically creates a new commit that points to it. This is referred to as a merge commit, 
 	and is special in that it has more than one parent.
 
+   * Marge Conflict
+      * after solve the confict manually
+	-> git add .
+	-> git commit
+	-> git poush
+  
+  
+
+$ Branch Management:
+   * git branch -v  -> To see the last commit on each branch
+   * git branch --merged  -> To see which branches are already merged into the branch you’re on
+			     Branches on this list without the * in front of them are generally fine 
+			     to delete with git branch -d; you’ve already incorporated their work into another branch,
+
+  * git branch --no-merged  -> This shows your other branch. Because it contains work that isn’t merged in yet. 
+	
+ * Changing a branch name:
+      -> git branch --move old_branch_name, new_banch_name
 
 
 	
