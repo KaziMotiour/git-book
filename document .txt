@@ -253,10 +253,34 @@ $ Branch Management:
 			     Branches on this list without the * in front of them are generally fine 
 			     to delete with git branch -d; you’ve already incorporated their work into another branch,
 
-  * git branch --no-merged  -> This shows your other branch. Because it contains work that isn’t merged in yet. 
+   * git branch --no-merged  -> This shows your other branch. Because it contains work that isn’t merged in yet. 
 	
- * Changing a branch name:
+   * Changing a branch name:
       -> git branch --move old_branch_name, new_banch_name
+  
+   * Pushing:
+      * git push origin branch
+      * git push origin serverfix:awesomebranch ->  to push your local serverfix branch to the awesomebranch branch 
+						    on the remote project.
+            
+$ Rebasing:
+   * you can take the patch of the change that was introduced in C4 and reapply it on top of C3
+   * To do rebasing:
+      * git checkout branch_name -> that you want to rebase
+      * git rebase master -> whare you want to marge
+      * git checkout master
+      * git merge experiment 
+   
+   * More Interesting Rebases:
+      You can also have your rebase replay on something other than the rebase target branch. 
+      Take a history like A history with a topic branch off another topic branch, for example. 
+      You branched a topic branch (server) to add some server-side functionality to your project, and made a commit. 
+      Then, you branched off that to make the client-side changes (client) and committed a few times. Finally, 
+      you went back to your server branch and did a few more commits.
 
-
-	
+      Suppose you decide that you want to merge your client-side changes into your mainline for a release, 
+      but you want to hold off on the server-side changes until it’s tested further. You can take the changes on 
+      client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of 
+      git rebase
+   
+      *  git rebase --onto master server client
