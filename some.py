@@ -15,5 +15,9 @@ print(z)
 
 
 f=6
-print(f)    
 
+print(f)
+
+h = 0
+print(h)
+    
