@@ -283,4 +283,6 @@ $ Rebasing:
       client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of 
       git rebase
    
-      *  git rebase --onto master server client
+      * git rebase --onto master server client
+      * git checkout master
+      * git merge client
